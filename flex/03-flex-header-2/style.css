@@ -12,6 +12,10 @@ body {
   background: white;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0,0,0,.1);
+  display: flex;
+  padding: 8px;
+  /* looks like justify space between is kinda the go to in terms of how one does these things */
+  justify-content: space-between;
 }
 
 .profile-image {
@@ -45,4 +49,16 @@ a {
 
 ul {
   list-style-type: none;
+  display: flex;
+  gap: 16px;
+  /* took me a while to understand why we needed to have this margin and padding at 0px, was a pretty small change but really made sense later */
+  margin: 0;
+  padding: 0;
+}
+
+.left, .right {
+  /* The split took place in HTML first using a div class and THEN I could manipulate them here. Prior to this, I couldn't figure out how to split them, even if it seems obvious now */
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
